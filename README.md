@@ -17,8 +17,11 @@ The spreadsheets come from the following sources:
 
 Each of the spreadsheets contain, among others, the following columns relevant to the analysis:
 
-- `tktktk` — TK description
-- `tktktk` — TK description
+- `RegionName` — TK description
+- `RegionID` — TK description
+- `SizeRank` — TK description
+- `MsaName` — TK description
+- `2014-01` — TK description
 
 ## Methodology
 
