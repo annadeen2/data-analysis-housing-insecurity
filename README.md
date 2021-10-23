@@ -88,8 +88,10 @@ The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on
 
 You can run the analysis yourself. To do so, you'll need the following installed on your computer:
 
+- Jupyter Notebooks
 - Python 3
-- The Python libraries specified in [`requirements.txt`](requirements.txt)
+- Google Sheets
+- Microsoft Excel
 
 ## Licensing
 
