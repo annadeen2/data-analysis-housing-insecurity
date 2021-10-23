@@ -11,7 +11,7 @@ This analysis uses Jupyter Notebooks, CSVs, and Google spreadsheets.
 The CSVs come from the following sources:
 
 - The DEEP-MAPS model of the labor force:
-  - `Unemployment-data.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 (retitled unemployment-data.csv for this analysis) can be downloaded from https://www.deepmaps.io/data/.
+  - `unemployment-data.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 (retitled unemployment-data.csv for this analysis) can be downloaded from https://www.deepmaps.io/data/.
 - Geographic identifiers: 
   - `geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City
 - ZIP codes:
@@ -41,12 +41,32 @@ Each of the spreadsheets contain, among others, the following columns relevant t
 
 ## Methodology
 
-The documents perform the following analyses:
+The notebook `data-analysis.ipynb` performs the following analyses:
 
-##### Part 1: TKTK
+##### Part 1: Creating a CSV file with unemployment data for December 2020 by ZIP code in New York City
 
-- Description of what you did with the data
+- Took the DEEP-MAPS model of the labor force, which contains estimates of unemployment and labor force participation, and used it to create the unemployment percentage for December 2020 for ZIP codes in New York City.
 
+#### Part 1.1: Examining the DEEP-MAPS model of the labor force
+- Imported `unemployment-data.csv` into Jupyter Notebook (which can again be downloaded from https://www.deepmaps.io/data/) and changed the `fips` column into a string.
+
+#### Part 1.2: Examining the GEOIDs and census tracks for New York City
+- Imported `geoid.csv` into Jupyter Notebook and shortened the GEOIDs in the `fips` column into FIPS.
+
+#### Part 1.3: Merging data sets and filtering
+- Merged `unemployment-data.csv` and `geoid.csv` on an inner join to to create a merged data set for the DEEP-MAPS model of the labor force for New York City only. Then the merged data set was filtered for the total estimates of unemployment and labor force participation in the `cat` column.
+
+#### Part 1.4: Column changes
+- The columns of the merged data set were then reduced to contain only the numbers for December 2020. The columns included `fips`, `cnip_2020_12`, `laborforce_2020_12` and `employed_2020_12`. A new column for the unemployment percentage in December 2020 was also created and titled `unemployment_percent_2020_12`. The unemployment percentage was then rounded to two decimals.
+
+#### Part 1.5: Examining ZIP codes and their corresponding census tracts
+- Imported `zip-tract.csv` into Jupyter Notebook
+
+#### Part 1.6: Merging data sets
+- Merged `zip-tract.csv` and with the December 2020 data set for labor force in New York City only  on an inner join to create a merged data set with the corresponding ZIP codes for the census tracts.
+
+#### Part 1.7: Exporting
+- Exported `unemployment-zip_dec_2020.csv`.
 
 ##### Part 2: TKTK
 
@@ -80,7 +100,7 @@ The documents perform the following analyses:
 
 ## Outputs
 
-The notebooks output this spreadsheet which contains TKTK: [`output/tktktk.csv`](output/tktktk.csv).
+The notebooks output this Jupyter Notebook which contains 1.1 to 1.7: `unemployment-zip_dec_2020.csv`
 The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on the Googlesheet): [`https://docs.google.com/spreadsheets/d/1PV6VLQCc8OjDQaQYwmTnZX43krsblKHOzeeOh8_C78A/edit?usp=sharing`]
 
 
@@ -88,10 +108,8 @@ The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on
 
 You can run the analysis yourself. To do so, you'll need the following installed on your computer:
 
-- Jupyter Notebooks
 - Python 3
-- Google Sheets
-- Microsoft Excel
+- The Python libraries specified in [`requirements.txt`](requirements.txt)
 
 ## Licensing
 
