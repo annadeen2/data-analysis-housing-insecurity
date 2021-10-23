@@ -41,7 +41,7 @@ Each of the spreadsheets contain, among others, the following columns relevant t
 
 ## Methodology
 
-The notebook `data-analysis.ipynb` performs the following analyses:
+The notebook `data-analysis.ipynb` (`Notebook/data-analysis.ipynb`) performs the following analyses:
 
 ##### Part 1: Creating a CSV file with unemployment data for December 2020 by ZIP code in New York City
 
@@ -51,7 +51,7 @@ The notebook `data-analysis.ipynb` performs the following analyses:
 - Imported `unemployment-data.csv` into Jupyter Notebook (which can again be downloaded from https://www.deepmaps.io/data/) and changed the `fips` column into a string.
 
 #### Part 1.2: Examining the GEOIDs and census tracks for New York City
-- Imported `geoid.csv` into Jupyter Notebook and shortened the GEOIDs in the `fips` column into FIPS.
+- Imported `geoid.csv` (`Data/geoid.csv`) into Jupyter Notebook and shortened the GEOIDs in the `fips` column into FIPS.
 
 #### Part 1.3: Merging data sets and filtering
 - Merged `unemployment-data.csv` and `geoid.csv` on an inner join to to create a merged data set for the DEEP-MAPS model of the labor force for New York City only. Then the merged data set was filtered for the total estimates of unemployment and labor force participation in the `cat` column.
@@ -60,7 +60,7 @@ The notebook `data-analysis.ipynb` performs the following analyses:
 - The columns of the merged data set were then reduced to contain only the numbers for December 2020. The columns included `fips`, `cnip_2020_12`, `laborforce_2020_12` and `employed_2020_12`. A new column for the unemployment percentage in December 2020 was also created and titled `unemployment_percent_2020_12`. The unemployment percentage was then rounded to two decimals.
 
 #### Part 1.5: Examining ZIP codes and their corresponding census tracts
-- Imported `zip-tract.csv` into Jupyter Notebook
+- Imported `zip-tract.csv` (`Data/zip-tract.csv`) into Jupyter Notebook
 
 #### Part 1.6: Merging data sets
 - Merged `zip-tract.csv` and with the December 2020 data set for labor force in New York City only  on an inner join to create a merged data set with the corresponding ZIP codes for the census tracts.
@@ -100,7 +100,7 @@ The notebook `data-analysis.ipynb` performs the following analyses:
 
 ## Outputs
 
-The notebooks output this Jupyter Notebook which contains 1.1 to 1.7: `unemployment-zip_dec_2020.csv`
+The notebooks output this Jupyter Notebook which contains 1.1 to 1.7: `unemployment-zip_dec_2020.csv` (`Output/unemployment-zip_dec_2020.csv`)
 The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on the Googlesheet): [`https://docs.google.com/spreadsheets/d/1PV6VLQCc8OjDQaQYwmTnZX43krsblKHOzeeOh8_C78A/edit?usp=sharing`]
 
 
