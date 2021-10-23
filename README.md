@@ -31,7 +31,7 @@ The Google spreadsheets come from the following sources:
 - Zillow Observed Rent Index:
   - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of smoothed, seasonally adjusted market rate rent for metropolitan areas across the U.S., including New York City, by zip code.
 - Tract-Level Data for 2020:
-  - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of census tract-level data for unemployment rates across the U.S., including New York City
+  - `zip-tract.csv`: Raw data of census tract-level data for unemployment rates across the U.S., including New York City
 
 Each of the spreadsheets contain, among others, the following columns relevant to the analysis:
 
