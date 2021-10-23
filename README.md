@@ -35,15 +35,13 @@ The Google spreadsheets come from the following sources:
 
 Each of the spreadsheets contain, among others, the following columns relevant to the analysis:
 
-- `RegionName` — TK description
-- `RegionID` — TK description
-- `SizeRank` — TK description
-- `MsaName` — TK description
-- `2014-01` — TK description
+- `RegionName` — Zip code
+- `MsaName` — Metropolitan area
+- `2014-01`through `2021-08` — Monthly-level rent
 
 ## Methodology
 
-The notebook [`tktktktk.ipynb`](notebooks/tktktktk.ipynb) performs the following analyses:
+The documents perform the following analyses:
 
 ##### Part 1: TKTK
 
