@@ -109,7 +109,7 @@ The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on
 You can run the analysis yourself. To do so, you'll need the following installed on your computer:
 
 - Python 3
-- The Python libraries specified in [`requirements.txt`](requirements.txt)
+- The Python libraries include Pandas and NumPy
 
 ## Licensing
 
