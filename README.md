@@ -1,14 +1,32 @@
 # data-analysis-housing-insecurity
 
-# Analysis of New York City's median income and market rental rate data sets — 01/2014 to 08/2020
+# Analysis of New York City's unemployment rate throughout 2020 by census tract and median income and market rental rate data sets from 01/2014 to 08/2020
 
 This repository contains data, analytic code, and findings that support portions of an upcoming article on housing insecurity in New York City.
 
 ## Data
 
-This analysis uses Zillow and Deepmaps spreadsheets.
+This analysis uses Jupyter Notebooks, CSVs, and Google spreadsheets.
 
-The spreadsheets come from the following sources:
+The CSVs come from the following sources:
+
+- The DEEP-MAPS model of the labor force:
+  - `Unemployment-data.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 (retitled unemployment-data.csv for this analysis) can be downloaded from https://www.deepmaps.io/data/.
+- Geographic identifiers: 
+  - `geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City
+- ZIP codes:
+  - `zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City
+
+Each of the CSVs contain, among others, the following columns relevant to the analysis:
+
+- `cat` — Estimates of unemployment and labor force participation by category
+- `fips` — Federal Information Processing Series, or FIPS, for all of the U.S.
+- `laborforce_2020_12` — Labor Force Participants for December 2020
+- `employed_2020_12` — Employed People for December 2020
+- `unemployment_percent_2020_12` — Percentage of unemployment for December 2020
+- `ZIP` — ZIP codes
+
+The Google spreadsheets come from the following sources:
 
 - Zillow Observed Rent Index:
   - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of smoothed, seasonally adjusted market rate rent for metropolitan areas across the U.S., including New York City, by zip code.
