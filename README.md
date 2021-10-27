@@ -21,6 +21,7 @@ Each of the CSVs contain, among others, the following columns relevant to the an
 
 - `cat` — Estimates of unemployment and labor force participation by category
 - `fips` — Federal Information Processing Series, or FIPS, for all of the U.S.
+- `cnip_2020_12` - An estimate of the population for December 2020
 - `laborforce_2020_12` — Labor Force Participants for December 2020
 - `employed_2020_12` — Employed People for December 2020
 - `unemployment_percent_2020_12` — Percentage of unemployment for December 2020
@@ -62,8 +63,8 @@ The notebook `data-analysis.ipynb` (`Notebook/data-analysis.ipynb`) performs the
 #### Part 1.5: Examining ZIP codes and their corresponding census tracts
 - Imported `zip-tract.csv` (`Data/zip-tract.csv`) into Jupyter Notebook
 
-#### Part 1.6: Merging data sets
-- Merged `zip-tract.csv` and with the December 2020 data set for labor force in New York City only  on an inner join to create a merged data set with the corresponding ZIP codes for the census tracts.
+#### Part 1.6: Merging data sets and filtering
+- Merged `zip-tract.csv` and with the December 2020 data set for labor force in New York City only on an inner join to create a merged data set with the corresponding ZIP codes for the census tracts. The merged data set is then filtered to only include census tracts where the civilian non-institutionalized population is greater than 500.
 
 #### Part 1.7: Exporting
 - Exported `unemployment-zip_dec_2020.csv`.
