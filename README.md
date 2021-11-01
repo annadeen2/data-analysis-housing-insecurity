@@ -8,12 +8,17 @@ This analysis uses Jupyter Notebooks, CSVs, and Google Sheets.
 
 The CSVs come from the following sources:
 
-- The DEEP-MAPS model of the labor force:
-  - `Data/deepmaps_tractdata_december2020_prelim.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 is too large to be added on Github but can be downloaded from https://www.deepmaps.io/data/.
-- Geographic identifiers:
-  - `Data/geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City. This data was pared down from a dataset that can be downloaded at [Census Reporter](https://censusreporter.org/data/table/?table=B03002&geo_ids=140|16000US3651000).
-- ZIP codes:
-  - `Data/zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City. This data can be downloaded [here](http://insertlink.com)
+#### DEEP-MAPS model of the labor force
+
+`Data/deepmaps_tractdata_december2020_prelim.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 is too large to be added on Github but can be downloaded from https://www.deepmaps.io/data/.
+
+#### Geographic identifiers
+
+`Data/geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City. This data was pared down from a dataset that can be downloaded at [Census Reporter](https://censusreporter.org/data/table/?table=B03002&geo_ids=140|16000US3651000).
+
+#### ZIP codes
+
+`Data/zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City. This data can be downloaded [here](http://insertlink.com)
 
 Each of the CSVs contain, among others, the following columns relevant to the analysis:
 
@@ -25,14 +30,12 @@ Each of the CSVs contain, among others, the following columns relevant to the an
 - `unemployment_percent_2020_12` — Percentage of unemployment for December 2020
 - `ZIP` — ZIP codes
 
+#### Zillow Data
 The Google spreadsheets come from [Zillow](https://www.zillow.com/research/data/) and include the following:
 
-- Zillow Observed Rent Index:
-  - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of smoothed, seasonally adjusted market rate rent for metropolitan areas across the U.S., including New York City, by zip code.
-- Tract-Level Data for 2020:
-  - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of census tract-level data for unemployment rates across the U.S., including New York City
+`Zip_ZORI_AllHomesPlusMultifamily_SSA`: Seasonally adjusted market rate rent for metropolitan areas across the U.S., including New York City, by zip code.
 
-Each of the spreadsheets contain, among others, the following columns relevant to the analysis:
+The spreadsheet contains, among others, the following columns relevant to the analysis:
 
 - `RegionName` — Zip code
 - `MsaName` — Metropolitan area
@@ -40,7 +43,7 @@ Each of the spreadsheets contain, among others, the following columns relevant t
 
 ## Methodology
 
-The notebook `data-analysis.ipynb` (`Notebook/data-analysis.ipynb`) performs the following analyses:
+The notebook `Notebook/01-unemployment-analysis.ipynb` (`Notebook/01-unemployment-analysis.ipynb`) performs the following analyses:
 
 ##### Part 1: Creating a CSV file with unemployment data for December 2020 by ZIP code in New York City
 
