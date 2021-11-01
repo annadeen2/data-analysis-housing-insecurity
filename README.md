@@ -1,21 +1,19 @@
-# data-analysis-housing-insecurity
+# Analysis of New York City's unemployment rate for the year of 2020 by census tract and median income and market rental rate data sets from 01/2014 to 08/2020
 
-# Analysis of New York City's unemployment rate throughout 2020 by census tract and median income and market rental rate data sets from 01/2014 to 08/2020
-
-This repository contains data, analytic code, and findings that support portions of an upcoming article on housing insecurity in New York City.
+This repository contains data, analytic code, and findings that support portions of an  article on housing insecurity in New York City.
 
 ## Data
 
-This analysis uses Jupyter Notebooks, CSVs, and Google spreadsheets.
+This analysis uses Jupyter Notebooks, CSVs, and Google Sheets.
 
 The CSVs come from the following sources:
 
 - The DEEP-MAPS model of the labor force:
-  - `unemployment-data.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 (retitled unemployment-data.csv for this analysis) can be downloaded from https://www.deepmaps.io/data/.
-- Geographic identifiers: 
-  - `geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City
+  - `Data/deepmaps_tractdata_december2020_prelim.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 is too large to be added on Github but can be downloaded from https://www.deepmaps.io/data/.
+- Geographic identifiers:
+  - `Data/geoid.csv`: Shows geographic identifiers, or GEOIDs, and census tracts for New York City. This data was pared down from a dataset that can be downloaded at [Census Reporter](https://censusreporter.org/data/table/?table=B03002&geo_ids=140|16000US3651000).
 - ZIP codes:
-  - `zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City
+  - `Data/zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City. This data can be downloaded [here](http://insertlink.com)
 
 Each of the CSVs contain, among others, the following columns relevant to the analysis:
 
@@ -27,7 +25,7 @@ Each of the CSVs contain, among others, the following columns relevant to the an
 - `unemployment_percent_2020_12` — Percentage of unemployment for December 2020
 - `ZIP` — ZIP codes
 
-The Google spreadsheets come from the following sources:
+The Google spreadsheets come from [Zillow](https://www.zillow.com/research/data/) and include the following:
 
 - Zillow Observed Rent Index:
   - `Zip_ZORI_AllHomesPlusMultifamily_SSA`: Raw data of smoothed, seasonally adjusted market rate rent for metropolitan areas across the U.S., including New York City, by zip code.
@@ -73,22 +71,23 @@ The notebook `data-analysis.ipynb` (`Notebook/data-analysis.ipynb`) performs the
 - Needed to join the unemployment data to Zillow Observed Rent Index (ZORI) for full picture of an area. (ZORI is a smoothed measure of the typical observed market rate rent across a given region.)
 
 #### Part 2.1: Vlookup to Fuzzy merge datasets
-- Used vlookup to merge the cleaning work Jessica did with `Unemployment-data-file` with 'Zip_ZORI_AllHomesPlusMultifamily_SSA` based on zipcodes in `fullunemp` tab. The vlookup can be seen in the 'ZORIpct_Vlookup'column.
+- Used vlookup to merge `Output/unemployment-zip_dec_2020.csv` with `Data/Zip_ZORI_AllHomesPlusMultifamily_SSA.xlsx` based on zipcodes in `fullunemp` tab. The vlookup can be seen in the `ZORIpct_Vlookup` column.
 
 #### Part 2.2: Determining ZORI Percent % Change
-- In 'ZORIpct_change' tab, determined the percent % from average ZORI values through August from 2014 and 2021. The result can be seen in 'pctchange_2014to2021' column.
+- In `ZORIpct_change` tab, determined the percent % from average ZORI values through August from 2014 and 2021. The result can be seen in `pctchange_2014to2021` column.
 
 #### Part 2.3: Zipcodes most frequently in the worst 100 for unemployment
 - Counted the most zipcodes which showed up most frequently in our unemployment data using a countif formula. The countif can be seen in 'count_of_top100unemployment' column.
 
 #### Part 2.4: Focused in on target Zipcodes
-- Based on the countif for frequency in top 100 worst unemployment rates and the ZORI median value, we determined that we would focus on zipcode 11207, the neighborhood of East New York in Brooklyn, with 10458, the neighborhood of Belmont in the Bronx, and 11435, the neighborhood of Jamacia in Queens as back ups.
+- Based on the countif for frequency in top 100 worst unemployment rates and the ZORI median value, we determined that we would focus on zipcode 11207, the neighborhood of East New York in Brooklyn, with 10458, the neighborhood of Belmont in the Bronx, and 11435, the neighborhood of Jamaica in Queens as back ups.
+
 
 
 ## Outputs
 
-The notebooks output this Jupyter Notebook which contains 1.1 to 1.7: `unemployment-zip_dec_2020.csv` (`Output/unemployment-zip_dec_2020.csv`)
-The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analysis on the Googlesheet): [`https://docs.google.com/spreadsheets/d/1PV6VLQCc8OjDQaQYwmTnZX43krsblKHOzeeOh8_C78A/edit?usp=sharing`]
+The notebooks output this Jupyter Notebook which contains 1.1 to 1.7: `Output/unemployment-zip_dec_2020.csv` (`Output/unemployment-zip_dec_2020.csv`)
+The notebooks output this spreadsheet which contains 2.1 to 2.6 (all analyses are on this [Google sheet](`https://docs.google.com/spreadsheets/d/1PV6VLQCc8OjDQaQYwmTnZX43krsblKHOzeeOh8_C78A/edit?usp=sharing`).
 
 
 ## Running the analysis yourself
