@@ -18,7 +18,7 @@ The CSVs come from the following sources:
 
 #### ZIP codes
 
-`Data/zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City. This data can be downloaded at [HUD USER](https://www.huduser.gov/portal/datasets/usps_crosswalk.html)
+`Data/zip-tract.csv`: Shows ZIP codes and their corresponding census tracts for the U.S., including New York City. This data can be downloaded at [HUD USER](https://www.huduser.gov/portal/datasets/usps_crosswalk.html).
 
 Each of the CSVs contain, among others, the following columns relevant to the analysis:
 
