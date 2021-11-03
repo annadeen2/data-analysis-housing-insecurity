@@ -10,7 +10,7 @@ The CSVs come from the following sources:
 
 #### DEEP-MAPS model of the labor force
 
-`Data/deepmaps_tractdata_december2020_prelim.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 is too large to be added on Github but can be downloaded from https://www.deepmaps.io/data/.
+`Data/deepmaps_tractdata_december2020_prelim.csv`: Shows estimates of unemployment and labor force participation by race, education, age, gender, marital status, and citizenship for most census tracts in the U.S., including New York City. The Tract-Level Data for 2020 is too large to be added on Github but can be downloaded from [DEEP-MAPS](https://www.deepmaps.io/data/).
 
 #### Geographic identifiers
 
